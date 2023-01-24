@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  central-system-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    container_name: central-system-api
+    expose:
+      - '5000'
+    ports:
+      - '5000:5000'
+    depends_on:
+      - pg_container
+    command: npm run docker
+  pg_container:
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=root
+    volumes:
+      - pg_data_container:/data/db
+volumes:
+  pg_data_container:
