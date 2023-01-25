@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "dev": "env HOST=localhost NODE_ENV=dev nodemon --exec node --loader ts-node/esm index.ts",
     "prestart": "npm run build",
     "start": "env HOST=localhost NODE_ENV=start node dist/index.js",
