@@ -7,6 +7,16 @@
 
 * Chargepoints.
 
+## Important Notes
+
+- If you run Docker-compose use "make up" in wsl, check Makefile for context.
+
+- The Docker-compose container is slow in build up, bear with it please.
+
+- There is a Postman collection (if you prefer this) in root directory with the endpoints and a few skeletons on how request bodies should look like.
+
+- You can also run the application locally with NPM, instruction below.
+
 ## Structure of the application
 
 Lously coupled API following a domain driven design architecture split into different layers following the _"Inversion of Control"_ principle (Onion Architecture), where implementations (outer layers) depend upon specifications (inner layers).

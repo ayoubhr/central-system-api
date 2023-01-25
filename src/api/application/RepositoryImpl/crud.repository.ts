@@ -26,7 +26,7 @@ export class CrudRepository<T extends ObjectLiteral> implements ICrudRepository<
 
   async save(Entity: T): Promise<T> {
     try {
-      return await dataSource.manager.save<T, T>((Entity as any as EntityTarget<T>), Entity)
+      return await dataSource.manager.save<T, T>((Entity as any as EntityTarget<T>), Entity, { data: Entity.name})
     } catch (error) {
       throw new Error((error as Error).message)
     }

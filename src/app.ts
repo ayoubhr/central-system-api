@@ -1,5 +1,6 @@
 import "reflect-metadata"
 import express, { Request, Response, NextFunction } from 'express'
+import cors from 'cors'
 import bodyParser from "body-parser"
 import dbConnection from "./api/infrastructure/config/database.js"
 import RouteTable from './api/infrastructure/RouteTable.js'
@@ -15,6 +16,8 @@ import { ChargePointService } from "./api/application/services/chargepoint.servi
 export const App = express()
 
 dbConnection()
+
+App.use(cors())
 
 App.use(bodyParser.json())
 

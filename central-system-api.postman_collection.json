@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"docker_works99\",\r\n    \"legalEntity\": \"yup\"\r\n}",
+							"raw": "{\r\n    \"name\": \"test_name\",\r\n    \"legalEntity\": \"social security SL\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -41,11 +41,8 @@
 				},
 				{
 					"name": "http://localhost:5000/api/v1/organization/findAll",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -75,11 +72,8 @@
 				},
 				{
 					"name": "http://localhost:5000/api/v1/organization/findOne",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -109,15 +103,12 @@
 				},
 				{
 					"name": "http://localhost:5000/api/v1/organization/findByName",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"entity\": \"Organization\",\r\n    \"name\": \"findByName\"\r\n}",
+							"raw": "{\r\n    \"entity\": \"Organization\",\r\n    \"name\": \"test_name\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -148,7 +139,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"id\": \"0050c7fe-c1f9-4074-83da-e0d5ceb1a95c\",\r\n        \"name\": \"testing_no_error\",\r\n        \"legalEntity\": \"null\"\r\n}",
+							"raw": "{\r\n        \"id\": \"0050c7fe-c1f9-4074-83da-e0d5ceb1a95c\",\r\n        \"name\": \"test_name\",\r\n        \"legalEntity\": \"something\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -215,7 +206,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"identity\": \"caso77\",\r\n    \"cpo\": \"47656d2c-c217-44a2-a47a-2a3502d110e0\"\r\n}",
+							"raw": "{\r\n    \"identity\": \"DID1234\",\r\n    \"cpo\": \"47656d2c-c217-44a2-a47a-2a3502d110e0\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -241,11 +232,8 @@
 				},
 				{
 					"name": "http://localhost:5000/api/v1/chargepoint/findAll",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -275,11 +263,8 @@
 				},
 				{
 					"name": "http://localhost:5000/api/v1/chargepoint/findOne",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -309,11 +294,8 @@
 				},
 				{
 					"name": "http://localhost:5000/api/v1/chargepoint/findByCpo",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -343,15 +325,12 @@
 				},
 				{
 					"name": "http://localhost:5000/api/v1/chargepoint/findByIdentity",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"identity\": \"identity1234\"\r\n}",
+							"raw": "{\r\n    \"identity\": \"DID1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -382,7 +361,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"id\": \"86d97799-5d3e-4ec6-8014-b3ea8008e3bc\",\r\n        \"identity\": \"identity1234\"\r\n}",
+							"raw": "{\r\n        \"id\": \"86d97799-5d3e-4ec6-8014-b3ea8008e3bc\",\r\n        \"identity\": \"DID1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -413,7 +392,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n    {\r\n        \"id\": \"cd73fd49-92b5-4920-9b7a-e266c378b9ac\",\r\n        \"identity\": \"caso77\",\r\n        \"cpo\": {\r\n            \"id\": \"47656d2c-c217-44a2-a47a-2a3502d110e0\",\r\n            \"name\": \"docker_works77\",\r\n            \"legalEntity\": \"yup\"\r\n        }\r\n    },\r\n    {\r\n        \"id\": \"75c17997-f540-415e-b7ab-ce2aefe35f73\",\r\n        \"identity\": \"caso99\",\r\n        \"cpo\": {\r\n            \"id\": \"47656d2c-c217-44a2-a47a-2a3502d110e0\",\r\n            \"name\": \"docker_works77\",\r\n            \"legalEntity\": \"yup\"\r\n        }\r\n    }\r\n]",
+							"raw": "[\r\n    {\r\n        \"id\": \"cd73fd49-92b5-4920-9b7a-e266c378b9ac\",\r\n        \"identity\": \"DID1234\",\r\n        \"cpo\": {\r\n            \"id\": \"47656d2c-c217-44a2-a47a-2a3502d110e0\",\r\n            \"name\": \"test_name\",\r\n            \"legalEntity\": \"something\"\r\n        }\r\n    },\r\n    {\r\n        \"id\": \"75c17997-f540-415e-b7ab-ce2aefe35f73\",\r\n        \"identity\": \"DID1234\",\r\n        \"cpo\": {\r\n            \"id\": \"47656d2c-c217-44a2-a47a-2a3502d110e0\",\r\n            \"name\": \"test_name\",\r\n            \"legalEntity\": \"something\"\r\n        }\r\n    }\r\n]",
 							"options": {
 								"raw": {
 									"language": "json"

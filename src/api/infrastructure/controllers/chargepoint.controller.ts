@@ -27,7 +27,7 @@ class ChargePointController {
 
   // Routes inside this controller endpoint
   private _configure(): void {
-    this._router.get('/findAll', async (req: Request, res: Response, next: NextFunction) => {
+    this._router.post('/findAll', async (req: Request, res: Response, next: NextFunction) => {
       try {
         const validationResult = await validateDTO("FindAll", req.body)
 
@@ -47,7 +47,7 @@ class ChargePointController {
       }
     })
 
-    this._router.get('/findOne', async (req: Request, res: Response, next: NextFunction) => {
+    this._router.post('/findOne', async (req: Request, res: Response, next: NextFunction) => {
       try {
         const validationResult = await validateDTO("FindOne", req.body)
 
@@ -67,7 +67,7 @@ class ChargePointController {
       }
     })
 
-    this._router.get('/findByIdentity', async (req: Request, res: Response, next: NextFunction) => {
+    this._router.post('/findByIdentity', async (req: Request, res: Response, next: NextFunction) => {
       try {
         const validationResult = await validateDTO("FindByIdentity", req.body)
 
@@ -87,7 +87,7 @@ class ChargePointController {
       }
     })
 
-    this._router.get('/findByCpo', async (req: Request, res: Response, next: NextFunction) => {
+    this._router.post('/findByCpo', async (req: Request, res: Response, next: NextFunction) => {
       try {
         const validationResult = await validateDTO("FindByCpo", req.body)
 

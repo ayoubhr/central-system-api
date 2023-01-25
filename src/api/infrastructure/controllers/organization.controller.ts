@@ -28,7 +28,7 @@ class OrganizationController {
   // Routes inside this controller endpoint
   private _configure(): void {
 
-    this._router.get('/findAll', async (req: Request, res: Response, next: NextFunction) => {
+    this._router.post('/findAll', async (req: Request, res: Response, next: NextFunction) => {
       try {
         const validationResult = await validateDTO("FindAll", req.body)
 
@@ -48,7 +48,7 @@ class OrganizationController {
       }
     })
 
-    this._router.get('/findOne', async (req: Request, res: Response, next: NextFunction) => {
+    this._router.post('/findOne', async (req: Request, res: Response, next: NextFunction) => {
       try {
         const validationResult = await validateDTO("FindOne", req.body)
 
@@ -68,7 +68,7 @@ class OrganizationController {
       }
     })
 
-    this._router.get('/findByName', async (req: Request, res: Response, next: NextFunction) => {
+    this._router.post('/findByName', async (req: Request, res: Response, next: NextFunction) => {
       try {
         const validationResult = await validateDTO("FindByName", req.body)
 

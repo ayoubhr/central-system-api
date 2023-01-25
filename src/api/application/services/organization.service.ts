@@ -2,7 +2,7 @@ import "reflect-metadata"
 import { Organization } from "../../domain/entities/organization.entity.js"
 import { OrganizationRepository } from "../RepositoryImpl/organization.repository.js"
 import { container, injectable } from "tsyringe"
-import { DeleteResult } from "typeorm"
+import { DeleteResult, UpdateResult } from "typeorm"
 import { v4 as uuid4 } from "uuid"
 
 /**
@@ -40,13 +40,23 @@ export class OrganizationService {
     }
   }
 
-  public upsertOrganization = async (Entity: any): Promise<Organization> => {
+  public upsertOrganization = async (Entity: any): Promise<Organization | UpdateResult> => {
     try {
       let organization = new Organization()
-      organization.id = uuid4()
+
       organization.name = Entity.name
       organization.legalEntity = Entity.legalEntity
-      return await this.organizationRepository.save(organization)
+
+      if(typeof Entity.id == undefined) {
+        // saves a new organization
+        organization.id = uuid4()
+        return await this.organizationRepository.save(organization)
+      } else {
+        // updates an existing organization
+        organization.id = Entity.id
+        return await this.organizationRepository.save(organization)
+      }
+      
     } catch (error) {
       throw new Error((error as Error).message)
     }
