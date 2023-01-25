@@ -9,22 +9,26 @@ import { DataSource, DataSourceOptions } from "typeorm"
  * sets the host as "pg_container" to properly build the docker-compose.
  */
 let entities: string[] = []
+let host: string | undefined = ''
 
 switch (process.env.NODE_ENV) {
   case "dev":
     entities = ["src/api/domain/entities/*.ts"]
+    host = process.env.HOST
     break;
   case "start":
     entities = ["dist/src/api/domain/entities/*.js"]
+    process.env.HOST
     break;
-  case "docker":
+  default:
     entities = ["dist/src/api/domain/entities/*.js"]
+    host = "pg_container"
     break;
 }
 
 export const options: DataSourceOptions = {
   "type": "postgres",
-  "host": process.env.HOST,
+  "host": host,
   "port": 5432,
   "username": "postgres",
   "password": "root",
